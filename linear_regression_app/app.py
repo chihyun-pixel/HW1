@@ -8,10 +8,11 @@ import matplotlib.pyplot as plt
 st.title("Interactive Simple Linear Regression Demo")
 
 # Streamlit sliders for user input
-a = st.slider("Slope (a)", min_value=-10.0, max_value=10.0, value=2.0)
-b = st.slider("Intercept (b)", min_value=-10.0, max_value=10.0, value=1.0)
-noise = st.slider("Noise level", min_value=0.0, max_value=5.0, value=1.0)
-n_points = st.slider("Number of data points", min_value=5, max_value=100, value=20)
+st.sidebar.header("Configuration")
+a = st.sidebar.slider("Slope (a)", min_value=-10.0, max_value=10.0, value=2.0)
+b = st.sidebar.slider("Intercept (b)", min_value=-10.0, max_value=10.0, value=1.0)
+noise = st.sidebar.slider("Noise level", min_value=0.0, max_value=5.0, value=1.0)
+n_points = st.sidebar.slider("Number of data points", min_value=5, max_value=100, value=20)
 
 # Prompt / process explanation
 st.write(f"Generating {n_points} points using y = {a}x + {b} + noise")
